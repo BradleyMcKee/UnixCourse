@@ -1,0 +1,358 @@
+***[[[gud buffer
+Current directory is ~/UnixCourse/debugAsst/
+GNU gdb (GDB) 7.6.2
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-unknown-linux-gnu".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from /home/bmckee/UnixCourse/debugAsst/discreteWordCount...done.
+(gdb) set args test1.txt
+(gdb) break lowercase 
+Breakpoint 1 at 0x400df8: file discreteWordCount.cpp, line 31.
+(gdb) break main
+Breakpoint 2 at 0x401032: file discreteWordCount.cpp, line 71.
+(gdb) run
+Starting program: /home/bmckee/UnixCourse/debugAsst/discreteWordCount test1.txt
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffff7ffa000
+(gdb) c
+Continuing.
+(gdb) bt
+#0  lowercase (str=0x7fffffffe600 "How") at discreteWordCount.cpp:31
+#1  0x0000000000400eaa in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:54
+#2  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+#0  lowercase (str=0x7fffffffe600 "How") at discreteWordCount.cpp:31
+31	  while (*str != 0) {
+#0  lowercase (str=0x7fffffffe600 "How") at discreteWordCount.cpp:31
+31	  while (*str != 0) {
+#0  lowercase (str=0x7fffffffe600 "How") at discreteWordCount.cpp:31
+31	  while (*str != 0) {
+#1  0x0000000000400eaa in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:54
+54	      lowercase(word); // e.g., so "word" and "Word" are treated as the same
+(gdb) bt
+#0  lowercase (str=0x7fffffffe600 "How") at discreteWordCount.cpp:31
+#1  0x0000000000400eaa in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:54
+#2  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+#2  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+78	  countWords (argv[1]);
+(gdb) bt
+#0  lowercase (str=0x7fffffffe600 "How") at discreteWordCount.cpp:31
+#1  0x0000000000400eaa in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:54
+#2  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+#2  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+78	  countWords (argv[1]);
+#2  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+78	  countWords (argv[1]);
+#2  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+78	  countWords (argv[1]);
+(gdb) bt
+#0  lowercase (str=0x7fffffffe600 "How") at discreteWordCount.cpp:31
+#1  0x0000000000400eaa in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:54
+#2  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+#1  0x0000000000400eaa in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:54
+54	      lowercase(word); // e.g., so "word" and "Word" are treated as the same
+(gdb) bt
+#0  lowercase (str=0x7fffffffe600 "How") at discreteWordCount.cpp:31
+#1  0x0000000000400eaa in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:54
+#2  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+#0  lowercase (str=0x7fffffffe600 "How") at discreteWordCount.cpp:31
+31	  while (*str != 0) {
+(gdb) bt
+#0  lowercase (str=0x7fffffffe600 "How") at discreteWordCount.cpp:31
+#1  0x0000000000400eaa in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:54
+#2  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+#0  lowercase (str=0x7fffffffe600 "How") at discreteWordCount.cpp:31
+31	  while (*str != 0) {
+(gdb) bt
+#0  lowercase (str=0x7fffffffe600 "How") at discreteWordCount.cpp:31
+#1  0x0000000000400eaa in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:54
+#2  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+#0  lowercase (str=0x7fffffffe600 "How") at discreteWordCount.cpp:31
+31	  while (*str != 0) {
+(gdb) bt
+#0  lowercase (str=0x7fffffffe600 "How") at discreteWordCount.cpp:31
+#1  0x0000000000400eaa in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:54
+#2  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+#0  lowercase (str=0x7fffffffe600 "How") at discreteWordCount.cpp:31
+31	  while (*str != 0) {
+(gdb) bt
+#0  lowercase (str=0x7fffffffe600 "How") at discreteWordCount.cpp:31
+#1  0x0000000000400eaa in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:54
+#2  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+  C-c C-cQuit
+(gdb) bt
+#0  0x00007ffff763b126 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+#4  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) p ++allWords;
+Invalid character ';' in expression.
+(gdb) p __++allWords
+No symbol "__" in current context.
+(gdb) p ++allWords
+No symbol "allWords" in current context.
+(gdb) bt
+#0  0x00007ffff763b126 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+#4  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+10	  return (strcmp(s1, s2) == 0);
+(gdb) bt
+#0  0x00007ffff763b126 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+#4  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) c
+Continuing.
+(gdb) bt
+No stack.
+(gdb) run
+Starting program: /home/bmckee/UnixCourse/debugAsst/discreteWordCount test1.txt
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffff7ffa000
+(gdb) bt
+#0  main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:71
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffff7ffa000
+bt
+#0  main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:71
+(gdb) bt
+#0  main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+vt
+Undefined command: "vt".  Try "help".
+(gdb) bt
+#0  lowercase (str=0x7fffffffe600 "How") at discreteWordCount.cpp:31
+#1  0x0000000000400eaa in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:54
+#2  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) bt
+#0  lowercase (str=0x7fffffffe600 "How") at discreteWordCount.cpp:33
+#1  0x0000000000400eaa in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:54
+#2  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) bt
+#0  countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:55
+#1  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) bt
+#0  countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+#1  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+bt
+#0  0x00007ffff763b126 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+#4  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) bt
+#0  0x00007ffff763b126 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+#4  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) down
+Bottom (innermost) frame selected; you cannot go down.
+(gdb) up
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+10	  return (strcmp(s1, s2) == 0);
+(gdb) bt
+#0  0x00007ffff763b126 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+#4  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) bt
+#0  0x00007ffff763b126 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+#4  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) bt
+#0  0x00007ffff763b126 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+#4  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) up
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+20	  for (i = 0; ((i <= n) && (!stringsEqual(a[i], x))); i++) ;
+(gdb) bt
+#0  0x00007ffff763b126 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+#4  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) up
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+56	      if (unorderedSearch(knownWords, nKnownWords, word) < 0)
+(gdb) bt
+#0  0x00007ffff763b126 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+#4  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) up
+#4  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+78	  countWords (argv[1]);
+(gdb) bt
+#0  0x00007ffff763b126 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+#4  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) up
+Initial frame selected; you cannot go up.
+(gdb) bt
+#0  0x00007ffff763b126 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+#4  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) bt
+#0  0x00007ffff763b126 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+#4  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) down
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+56	      if (unorderedSearch(knownWords, nKnownWords, word) < 0)
+(gdb) bt
+#0  0x00007ffff763b126 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+#4  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) down
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+20	  for (i = 0; ((i <= n) && (!stringsEqual(a[i], x))); i++) ;
+(gdb) bt
+#0  0x00007ffff763b126 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+#4  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) down
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+10	  return (strcmp(s1, s2) == 0);
+(gdb) bt
+#0  0x00007ffff763b126 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+#4  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) down
+#0  0x00007ffff763b126 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+(gdb) bt
+#0  0x00007ffff763b126 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+#4  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) down
+Bottom (innermost) frame selected; you cannot go down.
+(gdb) bt
+#0  0x00007ffff763b126 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+#4  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) up
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+10	  return (strcmp(s1, s2) == 0);
+(gdb) bt
+#0  0x00007ffff763b126 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x0000000000400d70 in stringsEqual (s1=0x0, s2=0x7fffffffe600 "how") at discreteWordCount.cpp:10
+#2  0x0000000000400dc5 in unorderedSearch (a=0x605260, n=0, x=0x7fffffffe600 "how") at discreteWordCount.cpp:20
+#3  0x0000000000400ecf in countWords (filename=0x7fffffffecbf "test1.txt") at discreteWordCount.cpp:56
+#4  0x0000000000401082 in main (nargs=2, argv=0x7fffffffea28) at discreteWordCount.cpp:78
+(gdb) 
+gud buffer]]]***
+***[[[source code buffer
+#include <fstream>
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+
+bool stringsEqual (const char* s1, const char* s2)
+{
+  return (strcmp(s1, s2) == 0);
+}
+
+
+int unorderedSearch 
+  (char* a[], unsigned n, const char* x)
+// Look for x within an unsorted array a, containing n items.
+// Return the position where found, or -1 if not found.
+{
+  int i;
+  for (i = 0; ((i <= n) && (!stringsEqual(a[i], x))); i++) ;
+  if (i >= n) 
+    i = -1;
+  return i;
+}
+
+
+void lowercase (char* str)
+  // Convert any upper-case alphabetic characters in str to
+  // lowercase
+{
+  while (*str != 0) {
+    char c = *str;
+    if ((c >= 'A') && (c <= 'Z'))
+      *str = c - 'A' + 'a';
+    ++str;
+  }
+}
+
+
+const int MAXARRAYSIZE = 5000;
+
+typedef char* charArray;
+
+void countWords (char* filename)
+{
+  ifstream input (filename);
+
+  char word[256];
+  char** knownWords = new charArray[MAXARRAYSIZE];
+  int nKnownWords = 0;
+  int allWords = 0;
+  while (input >> word)
+    {
+      lowercase(word); // e.g., so "word" and "Word" are treated as the same
+      ++allWords;
+      if (unorderedSearch(knownWords, nKnownWords, word) < 0)
+	{
+	  knownWords[nKnownWords] = new char[strlen(word)+1];
+	  strcpy(knownWords[nKnownWords], word);
+	  ++nKnownWords;
+	}
+    }
+  cout << "This file contains " << allWords << " words, "
+       << nKnownWords << " of them distinct." << endl;
+
+}
+
+
+int main(int nargs, char** argv)
+{
+  if (nargs != 2)
+    {
+      cerr << "To run this program, do \n";
+      cerr << argv[0] << " fileName\n";
+      return -1;
+    }
+
+  countWords (argv[1]);
+
+  return 0;
+}
+
+
+
+
+source code buffer]]]***

@@ -1,0 +1,28 @@
+***compiled with g++ -o countFirstLetters countFirstLetters.cpp
+cd /home/zeil/temp/tmp/
+g++ *.cpp
+In file included from guess.cpp:3:
+yesno.h:4: stringgg: No such file or directory
+In file included from yesno.cpp:1:
+yesno.h:4: stringgg: No such file or directory
+
+Compilation exited abnormally with code 1 at Wed Jul 25 13:47:14
+
+***end of compilation
+parsing error messages
+***compiled with g++ -g -o countFirstLetters countFirstLetters.cpp
+cd /home/zeil/cs309/Assignments/gdbAsst/
+g++ -o countFirstLetters countFirstLetters.cpp
+
+Compilation finished at Wed Jul 25 15:30:23
+
+***end of compilation
+***compiled with g++ -g -o countFirstLetters countFirstLetters.cpp
+cd /home/zeil/cs309/Assignments/gdbAsst/
+g++ -g -o countFirstLetters countFirstLetters.cpp
+
+Compilation finished at Wed Jul 25 15:35:37
+
+***end of compilation
+parsing error messages
+parsing error messages

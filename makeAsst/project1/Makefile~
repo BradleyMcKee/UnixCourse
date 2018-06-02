@@ -1,0 +1,6 @@
+guess: yesno.o guess.o
+	g++ -o guess yesno.o guess.o
+guess.o: yesno.h guess.c
+	g++ -c guess.c
+yesno.o: yesno.h yesno.c
+	g++ -c yesno.c

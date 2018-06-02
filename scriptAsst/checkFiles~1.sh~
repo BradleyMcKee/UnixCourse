@@ -1,0 +1,9 @@
+#!/bin/sh
+file = "$1"
+for i in "$@"; do
+
+    echo $1":" "`sh ./fileType.sh'"
+
+done
+
+

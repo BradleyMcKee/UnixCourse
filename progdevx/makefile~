@@ -1,0 +1,10 @@
+findPrimes: findPrimes.o sieve.o
+	g++ -g -o findPrimes findPrimes.o sieve.o
+
+%.o: %.cpp sieve.h
+	g++ -g -c $*.cpp
+
+clean:
+	rm findPrimes *.o *~
+
+

@@ -1,0 +1,1 @@
+discreteWordCount.o: discreteWordCount.cpp

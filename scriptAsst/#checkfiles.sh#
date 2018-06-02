@@ -1,0 +1,8 @@
+#!/bin/sh
+for file in "$@" do
+      if file "$file" | grep "ASCII text, with CRLF"; then
+echo "converting $file"
+sed -i 's/^M//g' "$file"
+   fi
+done
+

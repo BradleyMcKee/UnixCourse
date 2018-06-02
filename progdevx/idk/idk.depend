@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1429376729 source:/home/bmckee/UnixCourse/progdevx/findPrimes.cpp
+	"sieve.h"
+	<cstdlib>
+	<iostream>
+	<sstream>
+	<string>
+
+1429376982 /home/bmckee/UnixCourse/progdevx/sieve.h
+
+1429375780 source:/home/bmckee/UnixCourse/progdevx/sieve.cpp
+	"sieve.h"
+

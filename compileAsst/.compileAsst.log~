@@ -1,0 +1,43 @@
+***compiled with make -g++ -g yesno.cpp yesno.h guess.cpp
+***compiled with make -k -g++ -g yesno.cpp yesno.h gues.cpp
+***compiled with make -k g++ -g yesno.cpp yesno.h gues.cpp
+***compiled with g++ -o guess guess.cpp
+***compiled with g++ -o guess guess.cpp
+***compiled with g++ -o guess guess.cpp
+***compiled with g++ -o guess guess.cpp
+***compiled with g++ -o -c guess guess.cpp
+***compiled with g++ -o guess.cpp
+***compiled with g++ -o guess guess.cpp
+next-error
+-*- mode: compilation; default-directory: "~/UnixCourse/compileAsst/" -*-
+Compilation started at Thu Dec  4 19:46:19
+
+g++ -o guess guess.cpp
+In file included from guess.cpp:3:0:
+yesno.h:4:20: fatal error: stringgg: No such file or directory
+ #include <stringgg>
+                    ^
+compilation terminated.
+
+Compilation exited abnormally with code 1 at Thu Dec  4 19:46:19
+
+next-error
+***compiled with g++ -o guess guess.cpp
+next-error
+-*- mode: compilation; default-directory: "~/UnixCourse/compileAsst/" -*-
+Compilation started at Thu Dec  4 19:48:49
+
+g++ -o guess guess.cpp
+guess.cpp: In function ‘bool doGuesses(int, int)’:
+guess.cpp:25:20: error: ‘respnse’ was not declared in this scope
+       getline(cin, respnse);
+                    ^
+guess.cpp: In function ‘int main()’:
+guess.cpp:73:32: error: ‘doGuess’ was not declared in this scope
+   bool result = doGuess(0, 1001);
+                                ^
+
+Compilation exited abnormally with code 1 at Thu Dec  4 19:48:50
+
+next-error
+***compiled with g++ -o yesno yesno.cpp
